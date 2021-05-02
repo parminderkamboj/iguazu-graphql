@@ -176,6 +176,7 @@ describe('queryGraphQLData', () => {
     expect(executeFetch.mock.calls[0][0]).toEqual({
       actionType: 'QUERY',
       endpointName,
+      opts: {},
       query,
       variables,
     });

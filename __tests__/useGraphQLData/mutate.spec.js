@@ -59,7 +59,6 @@ describe('mutateGraphQLData', () => {
     })).toBeInstanceOf(Function);
   });
 
-
   it('dispatches a new fetch', () => {
     executeFetch.mockClear();
     const variables = { by: 2 };
@@ -70,6 +69,7 @@ describe('mutateGraphQLData', () => {
     expect(executeFetch.mock.calls[0][0]).toEqual({
       actionType: 'MUTATION',
       endpointName: 'endpoint-name',
+      opts: {},
       query: mutation,
       variables,
     });
@@ -84,6 +84,7 @@ describe('mutateGraphQLData', () => {
     expect(executeFetch.mock.calls[0][0]).toEqual({
       actionType: 'MUTATION',
       endpointName: 'endpoint-name',
+      opts: {},
       query: mutation,
       variables: null,
     });

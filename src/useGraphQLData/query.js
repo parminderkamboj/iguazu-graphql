@@ -26,7 +26,9 @@ export default function queryGraphQLData({
   query,
   variables = null,
   forceFetch = false,
+  opts = {},
 }) {
+  console.log(`$$$inside queryGraphQLData fetch opts ${JSON.stringify(opts)}`);
   validatePointersToQueryData({
     fnName, endpointName, query, variables,
   });
@@ -44,6 +46,7 @@ export default function queryGraphQLData({
       endpointName,
       query,
       variables,
+      opts,
     }));
 
     return {

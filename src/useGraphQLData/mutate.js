@@ -20,7 +20,12 @@ import { validatePointersToMutationData } from './validatePointersToData';
 const actionType = 'MUTATION';
 const fnName = 'mutateGraphQLData';
 
-export default function mutateGraphQLData({ endpointName, mutation, variables = null }) {
+export default function mutateGraphQLData({
+  endpointName,
+  mutation,
+  variables = null,
+  opts = {},
+}) {
   validatePointersToMutationData({
     fnName, endpointName, mutation, variables,
   });
@@ -31,6 +36,7 @@ export default function mutateGraphQLData({ endpointName, mutation, variables = 
       endpointName,
       query: mutation,
       variables,
+      opts,
     }));
 
     return {
